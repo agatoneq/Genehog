@@ -1,12 +1,16 @@
+from tkinter import *
 import random
+import GUI
 
 def display_list(list1, amount):
     numbers = set()
     while len(numbers) < int(amount):
         numbers.add(random.randint(1, len(list1)) - 1)
 
+    result = ""
     for i in range(int(amount)):
-        print(list1[list(numbers)[i]])
+        result += (list1[list(numbers)[i]])
+    GUI.label_result.config(text=result)
 
 
 def make_list(file_name, amount):
